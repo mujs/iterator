@@ -1,0 +1,23 @@
+{
+  "name": "iterator",
+  "version": "",
+  "repository": "",
+  "license": "",
+  "pkgDependencies": {
+    "mujs/module": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat-sourcemap": "*",
+    "gulp-eslint": "*",
+    "del": "*",
+    "pacman": "pfraces/pacman",
+    "freddie": "*"
+  },
+  "scripts": {
+    "deps" : "npm install && pacman",
+    "build"  : "gulp build",
+    "server" : "freddie",
+    "dev"    : "npm run build && npm run server"
+  }
+}
