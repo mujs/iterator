@@ -26,20 +26,16 @@ function returning `true` only when there are iterations left
 
 ```js
 var arrayIterator = function (array) {
-  var done = false;
-  var next = function () { return !done; };
-  
   var index = 0;
   var length = array.length;
   
+  var next = function () {
+    return index < length;
+  };
+  
   var iterator = function () {
-    var iteration = {
-      index: index,
-      value: array[index]
-    };
-    
+    var iteration = { index: index, value: array[index] };
     index = index + 1;
-    if (index === length) { done = true; }
     return iteration;
   };
   
